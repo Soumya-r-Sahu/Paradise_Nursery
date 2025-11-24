@@ -22,9 +22,9 @@ const ProductCard = ({ plant }) => {
         <p className="product-description">{plant.description}</p>
         <div className="product-price">
           {plant.sale && plant.originalPrice && (
-            <span className="original-price">${plant.originalPrice}</span>
+            <span className="original-price">₹{plant.originalPrice}</span>
           )}
-          <span className="current-price">${plant.price}</span>
+          <span className="current-price">₹{plant.price}</span>
         </div>
         <button
           className={`add-to-cart-btn ${added ? 'added' : ''}`}

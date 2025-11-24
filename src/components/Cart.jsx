@@ -53,7 +53,7 @@ const Cart = () => {
         </div>
         <div className="cart-summary">
           <div className="cart-total">
-            <h3>Total: ${total.toFixed(2)}</h3>
+            <h3>Total: ₹{total.toFixed(2)}</h3>
           </div>
           <div className="cart-actions">
             <Link to="/" className="continue-shopping-btn">

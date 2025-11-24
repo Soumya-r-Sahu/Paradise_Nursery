@@ -24,7 +24,7 @@ const CartItem = ({ item }) => {
       <div className="cart-item-details">
         <h3 className="cart-item-name">{item.name}</h3>
         <p className="cart-item-description">{item.description}</p>
-        <div className="cart-item-price">${item.price}</div>
+        <div className="cart-item-price">₹{item.price}</div>
       </div>
       <div className="cart-item-controls">
         <div className="quantity-controls">
@@ -45,7 +45,7 @@ const CartItem = ({ item }) => {
           </button>
         </div>
         <div className="cart-item-total">
-          ${(item.price * item.quantity).toFixed(2)}
+          ₹{(item.price * item.quantity).toFixed(2)}
         </div>
           <button
           className="remove-btn"
