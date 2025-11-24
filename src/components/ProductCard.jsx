@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useCart } from '../context/CartContext';
 
 const ProductCard = ({ plant }) => {
-  const { addToCart } = useCart();
-  const [added, setAdded] = useState(false);
+  const { addToCart, cartItems } = useCart();
+  
+  const isInCart = cartItems.some((item) => item.id === plant.id);
 
   const handleAddToCart = () => {
-    addToCart(plant);
-    setAdded(true);
-    setTimeout(() => setAdded(false), 2000);
+    if (!isInCart) {
+      addToCart(plant);
+    }
   };
 
   return (
@@ -27,10 +28,11 @@ const ProductCard = ({ plant }) => {
           <span className="current-price">₹{plant.price}</span>
         </div>
         <button
-          className={`add-to-cart-btn ${added ? 'added' : ''}`}
+          className={`add-to-cart-btn ${isInCart ? 'added' : ''}`}
           onClick={handleAddToCart}
+          disabled={isInCart}
         >
-          {added ? 'Added to Cart ✓' : 'Add to Cart'}
+          {isInCart ? 'Added to Cart' : 'Add to Cart'}
         </button>
       </div>
     </div>
