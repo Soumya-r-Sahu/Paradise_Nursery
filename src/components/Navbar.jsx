@@ -10,12 +10,17 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-brand">
-          <h1>🌱 Paradise Nursery</h1>
+          <h1><i className="fas fa-seedling"></i> Paradise Nursery</h1>
         </Link>
-        <Link to="/cart" className="cart-link">
-          <span className="cart-icon">🛒</span>
-          <span className="cart-badge">{cartCount}</span>
-        </Link>
+        <div className="navbar-links">
+          <Link to="/shop" className="nav-link">
+            <i className="fas fa-store"></i> Shop
+          </Link>
+          <Link to="/cart" className="cart-link">
+            <i className="fas fa-shopping-cart"></i>
+            <span className="cart-badge">{cartCount}</span>
+          </Link>
+        </div>
       </div>
     </nav>
   );

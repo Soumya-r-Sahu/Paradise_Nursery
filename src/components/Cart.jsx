@@ -18,7 +18,7 @@ const Cart = () => {
     return (
       <div className="checkout-success">
         <div className="success-message">
-          <h2>✅ Thank you for shopping with Paradise Nursery!</h2>
+          <h2><i className="fas fa-check-circle"></i> Thank you for shopping with Paradise Nursery!</h2>
           <p>Your order has been placed successfully.</p>
           <Link to="/" className="continue-shopping-btn">
             Continue Shopping

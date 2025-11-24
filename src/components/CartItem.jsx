@@ -47,12 +47,12 @@ const CartItem = ({ item }) => {
         <div className="cart-item-total">
           ${(item.price * item.quantity).toFixed(2)}
         </div>
-        <button
+          <button
           className="remove-btn"
           onClick={handleRemove}
           aria-label="Remove item"
         >
-          ❌
+          <i className="fas fa-trash"></i>
         </button>
       </div>
     </div>

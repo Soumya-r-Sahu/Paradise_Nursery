@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Navbar from './components/Navbar';
+import Landing from './components/Landing';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 import './styles.css';
@@ -12,12 +13,11 @@ function App() {
       <Router>
         <div className="App">
           <Navbar />
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<ProductList />} />
-              <Route path="/cart" element={<Cart />} />
-            </Routes>
-          </main>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/shop" element={<div className="main-content"><ProductList /></div>} />
+            <Route path="/cart" element={<div className="main-content"><Cart /></div>} />
+          </Routes>
         </div>
       </Router>
     </CartProvider>
