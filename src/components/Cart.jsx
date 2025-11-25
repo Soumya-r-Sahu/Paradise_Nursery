@@ -20,7 +20,7 @@ const Cart = () => {
         <div className="success-message">
           <h2><i className="fas fa-check-circle"></i> Thank you for shopping with Paradise Nursery!</h2>
           <p>Your order has been placed successfully.</p>
-          <Link to="/" className="continue-shopping-btn">
+          <Link to="/shop" className="continue-shopping-btn">
             Continue Shopping
           </Link>
         </div>
@@ -34,7 +34,7 @@ const Cart = () => {
         <h2 className="page-title">Your Shopping Cart</h2>
         <div className="empty-cart">
           <p>Your cart is empty.</p>
-          <Link to="/" className="continue-shopping-btn">
+          <Link to="/shop" className="continue-shopping-btn">
             Continue Shopping
           </Link>
         </div>
@@ -56,7 +56,7 @@ const Cart = () => {
             <h3>Total: ₹{total.toFixed(2)}</h3>
           </div>
           <div className="cart-actions">
-            <Link to="/" className="continue-shopping-btn">
+            <Link to="/shop" className="continue-shopping-btn">
               Continue Shopping
             </Link>
             <button className="checkout-btn" onClick={handleCheckout}>
