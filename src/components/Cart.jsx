@@ -4,9 +4,10 @@ import { useCart } from '../context/CartContext';
 import CartItem from './CartItem';
 
 const Cart = () => {
-  const { cartItems, getCartTotal, clearCart } = useCart();
+  const { cartItems, getCartTotal, getCartCount, clearCart } = useCart();
   const [showSuccess, setShowSuccess] = useState(false);
   const total = getCartTotal();
+  const totalItems = getCartCount();
 
   const handleCheckout = () => {
     clearCart();
@@ -53,7 +54,8 @@ const Cart = () => {
         </div>
         <div className="cart-summary">
           <div className="cart-total">
-            <h3>Total: ₹{total.toFixed(2)}</h3>
+            <h3>Total Items: {totalItems}</h3>
+            <h3>Total Cost: ₹{total.toFixed(2)}</h3>
           </div>
           <div className="cart-actions">
             <Link to="/shop" className="continue-shopping-btn">

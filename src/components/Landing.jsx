@@ -33,7 +33,7 @@ const Landing = () => {
             </div>
           </div>
           <Link to="/shop" className="shop-now-btn">
-            <i className="fas fa-shopping-bag"></i> Shop Now
+            Get Started
           </Link>
         </div>
       </div>
