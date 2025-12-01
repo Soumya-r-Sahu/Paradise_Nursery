@@ -4,7 +4,9 @@ A complete React e-commerce application for a plant nursery, built as the final 
 
 ## 🚀 Live Demo
 
-[Add your deployed URL here after deployment]
+🌐 **Live Website**: https://Soumya-r-Sahu.github.io/Paradise_Nursery
+
+The application is deployed and live on GitHub Pages!
 
 ## ✨ Features
 

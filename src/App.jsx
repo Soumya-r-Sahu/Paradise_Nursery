@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Navbar from './components/Navbar';
@@ -11,12 +11,7 @@ import './styles.css';
 function App() {
   return (
     <Provider store={store}>
-      <Router
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
+      <Router>
         <div className="App">
           <Navbar />
           <Routes>
