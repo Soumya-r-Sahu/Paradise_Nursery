@@ -1,19 +1,20 @@
 import React from 'react';
-import { useCart } from '../context/CartContext';
+import { useDispatch } from 'react-redux';
+import { updateQuantity, removeFromCart } from '../redux/actions/cartActions';
 
 const CartItem = ({ item }) => {
-  const { updateQuantity, removeFromCart } = useCart();
+  const dispatch = useDispatch();
 
   const handleIncrease = () => {
-    updateQuantity(item.id, item.quantity + 1);
+    dispatch(updateQuantity(item.id, item.quantity + 1));
   };
 
   const handleDecrease = () => {
-    updateQuantity(item.id, item.quantity - 1);
+    dispatch(updateQuantity(item.id, item.quantity - 1));
   };
 
   const handleRemove = () => {
-    removeFromCart(item.id);
+    dispatch(removeFromCart(item.id));
   };
 
   return (

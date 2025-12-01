@@ -1,33 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import { useSelector } from 'react-redux';
+import { getCartItems, getCartTotal, getCartCount } from '../redux/selectors/cartSelectors';
 import CartItem from './CartItem';
 
 const Cart = () => {
-  const { cartItems, getCartTotal, getCartCount, clearCart } = useCart();
-  const [showSuccess, setShowSuccess] = useState(false);
-  const total = getCartTotal();
-  const totalItems = getCartCount();
+  const cartItems = useSelector(getCartItems);
+  const total = useSelector(getCartTotal);
+  const totalItems = useSelector(getCartCount);
 
   const handleCheckout = () => {
-    clearCart();
-    setShowSuccess(true);
-    setTimeout(() => setShowSuccess(false), 5000);
+    alert('Coming Soon! Checkout functionality will be available soon.');
   };
-
-  if (showSuccess) {
-    return (
-      <div className="checkout-success">
-        <div className="success-message">
-          <h2><i className="fas fa-check-circle"></i> Thank you for shopping with Paradise Nursery!</h2>
-          <p>Your order has been placed successfully.</p>
-          <Link to="/shop" className="continue-shopping-btn">
-            Continue Shopping
-          </Link>
-        </div>
-      </div>
-    );
-  }
 
   if (cartItems.length === 0) {
     return (

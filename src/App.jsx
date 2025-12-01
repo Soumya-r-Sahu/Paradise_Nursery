@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/CartContext';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import Navbar from './components/Navbar';
 import Landing from './components/Landing';
 import ProductList from './components/ProductList';
@@ -9,7 +10,7 @@ import './styles.css';
 
 function App() {
   return (
-    <CartProvider>
+    <Provider store={store}>
       <Router
         future={{
           v7_startTransition: true,
@@ -25,7 +26,7 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </CartProvider>
+    </Provider>
   );
 }
 

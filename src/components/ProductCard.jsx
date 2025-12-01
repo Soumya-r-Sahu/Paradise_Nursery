@@ -1,14 +1,17 @@
 import React from 'react';
-import { useCart } from '../context/CartContext';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../redux/actions/cartActions';
+import { getCartItems } from '../redux/selectors/cartSelectors';
 
 const ProductCard = ({ plant }) => {
-  const { addToCart, cartItems } = useCart();
+  const dispatch = useDispatch();
+  const cartItems = useSelector(getCartItems);
   
   const isInCart = cartItems.some((item) => item.id === plant.id);
 
   const handleAddToCart = () => {
     if (!isInCart) {
-      addToCart(plant);
+      dispatch(addToCart(plant));
     }
   };
 
