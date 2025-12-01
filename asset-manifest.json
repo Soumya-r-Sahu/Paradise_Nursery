@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Paradise_Nursery/static/css/main.a82f8892.css",
+    "main.js": "/Paradise_Nursery/static/js/main.f54ecc40.js",
+    "index.html": "/Paradise_Nursery/index.html",
+    "main.a82f8892.css.map": "/Paradise_Nursery/static/css/main.a82f8892.css.map",
+    "main.f54ecc40.js.map": "/Paradise_Nursery/static/js/main.f54ecc40.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a82f8892.css",
+    "static/js/main.f54ecc40.js"
+  ]
+}
